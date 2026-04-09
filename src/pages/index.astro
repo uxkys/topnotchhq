@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="TopNotch HQ - We deliver top-notch solutions for your business.">
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Top-Notch Solutions<br />for Your Business</h1>
+      <p class="hero-sub">ビジネスの成長を加速させる、最高品質のソリューションを提供します。</p>
+      <a href="#contact" class="btn-primary">お問い合わせ</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-desc">
+        TopNotch HQは、クライアントのビジネス課題を解決するプロフェッショナルチームです。
+        最新のテクノロジーと豊富な経験を活かし、最高品質のサービスを提供します。
+      </p>
+    </div>
+  </section>
+
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Web Development</h3>
+          <p>高速で美しいWebサイト・Webアプリケーションを開発します。</p>
+        </div>
+        <div class="service-card">
+          <h3>Consulting</h3>
+          <p>ビジネス戦略からテクノロジー導入まで、幅広くサポートします。</p>
+        </div>
+        <div class="service-card">
+          <h3>Design</h3>
+          <p>ユーザー体験を重視した、洗練されたデザインを提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container contact-inner">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-desc">お気軽にお問い合わせください。</p>
+      <a href="mailto:hello@topnotchhq.com" class="btn-primary">メールで問い合わせ</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 10rem 0 6rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section-alt {
+    background: var(--color-bg-light);
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  .section-desc {
+    text-align: center;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-primary);
+  }
+
+  .service-card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .contact-inner {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
