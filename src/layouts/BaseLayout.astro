@@ -2,13 +2,18 @@
 interface Props {
   title: string;
   description?: string;
+  lang?: 'en' | 'ja';
 }
 
-const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
+const { title, description = 'Top Notch Inc. — International Business Advisory', lang = 'en' } = Astro.props;
+const isJa = lang === 'ja';
+const prefix = isJa ? '/ja' : '';
+const switchLang = isJa ? '/' : '/ja/';
+const switchLabel = isJa ? 'EN' : 'JA';
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,18 +21,22 @@ const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>{title} | TopNotch HQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title} | Top Notch Inc.</title>
   </head>
   <body>
     <header class="header">
       <nav class="container nav">
-        <a href="/" class="logo">TopNotch HQ</a>
+        <a href={`${prefix}/`} class="logo">
+          <img src="/images/TopNotchInc_icon.avif" alt="Top Notch Inc." class="logo-icon" />
+          <span>Top Notch Inc.</span>
+        </a>
         <ul class="nav-links">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/#contact" class="btn-nav">Contact</a></li>
+          <li><a href={`${prefix}/#about`}>{isJa ? '会社概要' : 'About'}</a></li>
+          <li><a href={`${prefix}/#services`}>{isJa ? 'サービス' : 'Services'}</a></li>
+          <li><a href={`${prefix}/#founder`}>{isJa ? '代表紹介' : 'Founder'}</a></li>
+          <li><a href={`${prefix}/#contact`} class="btn-nav">{isJa ? 'お問い合わせ' : 'Contact'}</a></li>
+          <li><a href={switchLang} class="lang-switch">{switchLabel}</a></li>
         </ul>
       </nav>
     </header>
@@ -38,7 +47,9 @@ const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>&copy; {new Date().getFullYear()} TopNotch HQ. All rights reserved.</p>
+        <div class="footer-logo">Top Notch Inc.</div>
+        <p class="footer-tagline">{isJa ? '国際ビジネスアドバイザリー' : 'International Business Advisory'}</p>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Top Notch Inc. All rights reserved.</p>
       </div>
     </footer>
   </body>
@@ -54,8 +65,8 @@ const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     z-index: 100;
   }
@@ -68,24 +79,36 @@ const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
   }
 
   .logo {
-    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-primary);
     text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: contain;
   }
 
   .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.8rem;
     align-items: center;
   }
 
   .nav-links a {
     color: var(--color-text);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     text-decoration: none;
+    letter-spacing: 0.01em;
   }
 
   .nav-links a:hover {
@@ -94,28 +117,67 @@ const { title, description = 'TopNotch HQ - Official Website' } = Astro.props;
   }
 
   .btn-nav {
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: #fff !important;
-    padding: 0.5rem 1.2rem;
+    padding: 0.45rem 1.2rem;
     border-radius: 6px;
+    font-size: 0.85rem !important;
   }
 
   .btn-nav:hover {
-    opacity: 0.9;
+    background: #1e293b;
+  }
+
+  .lang-switch {
+    border: 1px solid var(--color-border);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.8rem !important;
+    color: var(--color-text-light) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+  }
+
+  .lang-switch:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent) !important;
   }
 
   .footer {
-    background: var(--color-primary);
-    color: #ccc;
-    padding: 2rem 0;
+    background: var(--color-bg-dark);
+    color: #9ca3af;
+    padding: 3rem 0;
     text-align: center;
-    font-size: 0.9rem;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: #6b7280;
   }
 
   @media (max-width: 768px) {
     .nav-links {
       gap: 1rem;
-      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+    }
+
+    .logo span {
+      display: none;
     }
   }
 </style>
