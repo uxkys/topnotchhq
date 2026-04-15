@@ -53,20 +53,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="section-label center">Services</h2>
       <h3 class="section-heading center">What We Offer</h3>
       <div class="services-grid">
-        <div class="service-card">
+        <a href="/services/market-research" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <h4>Market Research</h4>
           <p>In-depth analysis of target markets across Asia and Europe to identify opportunities and mitigate risks.</p>
-        </div>
-        <div class="service-card">
+          <span class="service-link">Learn more →</span>
+        </a>
+        <a href="/services/brand-strategy" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <h4>Brand Strategy</h4>
           <p>Strategic brand positioning and development tailored for international markets, drawing on decades of luxury and consumer brand experience.</p>
-        </div>
+          <span class="service-link">Learn more →</span>
+        </a>
         <div class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -287,11 +289,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--color-border);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
   }
 
   .service-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+  }
+
+  a.service-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .service-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
   }
 
   .service-icon {

@@ -52,20 +52,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <h2 class="section-label center">サービス</h2>
       <h3 class="section-heading center">提供サービス</h3>
       <div class="services-grid">
-        <div class="service-card">
+        <a href="/ja/services/market-research" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
           <h4>海外市場調査</h4>
           <p>アジア・欧州を中心としたターゲット市場の詳細な分析を行い、事業機会の発見とリスクの軽減を支援します。</p>
-        </div>
-        <div class="service-card">
+          <span class="service-link">詳しく見る →</span>
+        </a>
+        <a href="/ja/services/brand-strategy" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
           <h4>ブランド戦略立案</h4>
           <p>高級ブランド・消費財ブランドでの豊富な経験を活かし、国際市場に適したブランドポジショニングと戦略を構築します。</p>
-        </div>
+          <span class="service-link">詳しく見る →</span>
+        </a>
         <div class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -286,11 +288,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--color-border);
-    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
   }
 
   .service-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+  }
+
+  a.service-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .service-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
   }
 
   .service-icon {
