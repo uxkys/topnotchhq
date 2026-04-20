@@ -2,6 +2,7 @@ backend:
   name: github
   repo: uxkys/topnotchhq
   branch: main
+  base_url: https://sveltia-cms-auth.wrkkys.workers.dev
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
     update: 'Update {{collection}} "{{slug}}"'
