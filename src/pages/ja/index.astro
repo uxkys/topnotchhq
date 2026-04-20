@@ -11,10 +11,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="hero">
     <div class="container hero-inner">
       <p class="hero-label">International Business Advisory</p>
-      <h1>ビジネスを、<br />国境の先へ</h1>
+      <h1>市場を読み、戦略を描き、<br />パートナーをつなぎ、事業を動かす。</h1>
       <p class="hero-sub">
-        欧州・アジア市場での豊富な実務経験をもとに、ブランド戦略、
-        市場参入、パートナー開拓を支援する国際ビジネスアドバイザリー。
+        海外進出においては時間とリスクを圧縮し、<br />
+        日本進出においては市場参入の障壁を下げる。
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">お問い合わせ</a>
@@ -68,20 +68,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <p>高級ブランド・消費財ブランドでの豊富な経験を活かし、国際市場に適したブランドポジショニングと戦略を構築します。</p>
           <span class="service-link">詳しく見る →</span>
         </a>
-        <div class="service-card">
+        <a href="/ja/services/partner-development" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h4>パートナー開拓</h4>
-          <p>現地の適切なパートナー、販売代理店、ステークホルダーの発掘・接続を行い、市場参入を成功に導きます。</p>
-        </div>
-        <div class="service-card">
+          <p>実務経験に基づいた実行型パートナー開拓支援。単なる紹介ではなく、事業として成立する関係構築まで関与します。</p>
+          <span class="service-link">詳しく見る →</span>
+        </a>
+        <a href="/ja/services/business-development" class="service-card">
           <div class="service-icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h4>事業展開支援</h4>
-          <p>新たな海外市場への進出を目指す企業に対し、調査から事業立ち上げまでのエンドツーエンドのサポートを提供します。</p>
-        </div>
+          <h4>事業開拓支援</h4>
+          <p>戦略で終わらせない、実行型ビジネス開拓支援。実際の販売・交渉・展開を伴う形で事業立ち上げを推進します。</p>
+          <span class="service-link">詳しく見る →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -147,19 +149,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .hero h1 {
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
   }
 
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.8;
     margin-bottom: 2.5rem;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .hero-actions {
@@ -412,7 +414,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 1.7rem;
+    }
+
+    .hero-sub br {
+      display: none;
     }
 
     .hero-actions {
