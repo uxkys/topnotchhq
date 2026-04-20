@@ -1,0 +1,67 @@
+backend:
+  name: github
+  repo: uxkys/topnotchhq
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+media_folder: "public/images"
+public_folder: "/images"
+
+site_url: https://topnotchhq.com
+display_url: https://topnotchhq.com
+logo_url: https://topnotchhq.com/images/TopNotchInc_icon.avif
+
+locale: "ja"
+
+collections:
+  - name: "blog_ja"
+    label: "ブログ（日本語）"
+    label_singular: "記事"
+    description: "日本語のブログ記事を作成・編集できます。"
+    folder: "src/content/blog"
+    create: true
+    filter:
+      field: "lang"
+      value: "ja"
+    extension: "md"
+    format: "yaml-frontmatter"
+    slug: "{{slug}}-ja"
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "今年の記事"
+        field: date
+        pattern: "{{year}}"
+    fields:
+      - { name: title, label: "タイトル", widget: string }
+      - { name: description, label: "説明文", widget: text, hint: "SEOやブログ一覧に表示される短い説明（1〜2文）" }
+      - { name: date, label: "公開日", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: false }
+      - { name: tags, label: "タグ", widget: list, required: false, default: [], hint: "例：お知らせ、事例紹介" }
+      - { name: lang, label: "Language", widget: hidden, default: "ja" }
+      - { name: body, label: "本文", widget: markdown, hint: "Markdown形式で本文を記述します。画像の挿入もできます。" }
+
+  - name: "blog_en"
+    label: "Blog (English)"
+    label_singular: "Article"
+    description: "Create and edit English blog articles."
+    folder: "src/content/blog"
+    create: true
+    filter:
+      field: "lang"
+      value: "en"
+    extension: "md"
+    format: "yaml-frontmatter"
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { name: title, label: "Title", widget: string }
+      - { name: description, label: "Description", widget: text, hint: "Short description for SEO and blog list (1-2 sentences)" }
+      - { name: date, label: "Date", widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: false }
+      - { name: tags, label: "Tags", widget: list, required: false, default: [], hint: "e.g. News, Case Study" }
+      - { name: lang, label: "Language", widget: hidden, default: "en" }
+      - { name: body, label: "Body", widget: markdown, hint: "Write in Markdown. You can insert images too." }

@@ -83,6 +83,14 @@ public/
 - フォント: Inter（Google Fonts）
 - レスポンシブ対応（モバイル/タブレット/デスクトップ）
 
+### Admin Panel (Sveltia CMS)
+
+- URL: https://topnotchhq.com/admin/
+- 非エンジニアでもブログ記事をWYSIWYGで作成・編集できる
+- GitHub OAuth でログイン（リポジトリへの書き込み権限が必要）
+- 設定: `public/admin/config.yml`
+- 認証プロキシ: Sveltia公式ホスト版（auth.sveltia.app）を利用
+
 ## Claude への運用指示
 
 ### ブログ記事の作成ルール

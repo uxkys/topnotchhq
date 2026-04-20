@@ -38,3 +38,18 @@ Rules:
 - If a design change only requires editing `BaseLayout.astro` or `global.css`, it automatically applies to both languages (no duplication needed)
 - If a design change requires editing page-level `<style>` blocks, ensure BOTH the English and Japanese page files receive the exact same CSS changes
 - Never introduce language-specific styling differences
+
+### Content Management — Sveltia CMS
+
+The site has a built-in admin panel at `/admin/` powered by Sveltia CMS.
+This allows non-technical users (e.g., the company representative) to write blog articles via a WYSIWYG interface.
+
+- Admin URL: https://topnotchhq.com/admin/
+- Auth: GitHub OAuth (uses default sveltia.app proxy)
+- Config: `public/admin/config.yml`
+- Backend: writes directly to `src/content/blog/` in the GitHub repo
+- File naming convention enforced by config:
+  - English: `{slug}.md`
+  - Japanese: `{slug}-ja.md`
+
+When adding new content collections (e.g., service pages editable via CMS), update `public/admin/config.yml` accordingly.
