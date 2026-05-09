@@ -131,10 +131,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <div class="partners-grid">
         <a href="/partners/koga" class="partner-card">
-          <div class="partner-avatar"><span>K</span></div>
-          <h4>Koga</h4>
-          <p class="partner-card-role">Partner</p>
-          <p class="partner-card-bio">Profile coming soon</p>
+          <div class="partner-avatar partner-avatar-photo">
+            <img src="/images/topnotch_koga_photo001.jpg" alt="Akane Koga" />
+          </div>
+          <h4>Akane Koga</h4>
+          <p class="partner-card-role">Creative Partner</p>
+          <p class="partner-card-bio">Paper quilling artist creating expressive, lifelike forms through flow, density, and space.</p>
           <span class="partner-card-link">View profile →</span>
         </a>
         <a href="/partners/koyasu" class="partner-card">
@@ -489,6 +491,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
     margin: 0 auto 1.2rem;
     letter-spacing: 0.02em;
+    overflow: hidden;
+  }
+
+  .partner-avatar-photo {
+    background: var(--color-bg-light);
+  }
+
+  .partner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .partner-card h4 {

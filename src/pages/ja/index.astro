@@ -129,10 +129,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
       <div class="partners-grid">
         <a href="/ja/partners/koga" class="partner-card">
-          <div class="partner-avatar"><span>K</span></div>
-          <h4>古賀</h4>
-          <p class="partner-card-role">パートナー</p>
-          <p class="partner-card-bio">プロフィール準備中</p>
+          <div class="partner-avatar partner-avatar-photo">
+            <img src="/images/topnotch_koga_photo001.jpg" alt="古賀 茜" />
+          </div>
+          <h4>古賀 茜</h4>
+          <p class="partner-card-role">クリエイティブパートナー</p>
+          <p class="partner-card-bio">紙を素材に「流れ・密度・余白」で生命感を表現するペーパークイリング作家。</p>
           <span class="partner-card-link">詳細はこちら →</span>
         </a>
         <a href="/ja/partners/koyasu" class="partner-card">
@@ -486,6 +488,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     font-weight: 700;
     margin: 0 auto 1.2rem;
     letter-spacing: 0.02em;
+    overflow: hidden;
+  }
+
+  .partner-avatar-photo {
+    background: var(--color-bg-light);
+  }
+
+  .partner-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .partner-card h4 {
