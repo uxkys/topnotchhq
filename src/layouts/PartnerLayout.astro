@@ -1,0 +1,217 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'en' | 'ja';
+  name: string;
+  role: string;
+  photo?: string;
+  initials?: string;
+}
+
+const { title, description, lang = 'en', name, role, photo, initials } = Astro.props;
+const isJa = lang === 'ja';
+const backLink = isJa ? '/ja/#partners' : '/#partners';
+const backLabel = isJa ? '← パートナー一覧へ' : '← Back to Partners';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="partner-hero">
+    <div class="container partner-hero-inner">
+      <a href={backLink} class="back-link">{backLabel}</a>
+      <div class="partner-hero-grid">
+        <div class="partner-hero-photo">
+          {photo ? (
+            <img src={photo} alt={name} />
+          ) : (
+            <div class="partner-hero-placeholder" aria-label={name}>
+              <span>{initials ?? name.slice(0, 1)}</span>
+            </div>
+          )}
+        </div>
+        <div class="partner-hero-text">
+          <p class="partner-label">{isJa ? 'パートナー紹介' : 'Partner'}</p>
+          <h1>{name}</h1>
+          <p class="partner-role">{role}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="partner-section">
+    <div class="container partner-body">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .partner-hero {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 7rem 0 3.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .partner-hero-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .partner-hero-photo img,
+  .partner-hero-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .partner-hero-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+  }
+
+  .partner-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.6rem;
+  }
+
+  .partner-hero-text h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .partner-role {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .partner-section {
+    padding: 4rem 0 6rem;
+  }
+
+  .partner-body {
+    max-width: 820px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .partner-body :global(h2) {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+  }
+
+  .partner-body :global(h3) {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 1.8rem 0 0.7rem;
+    line-height: 1.4;
+  }
+
+  .partner-body :global(p) {
+    margin-bottom: 1.2rem;
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+
+  .partner-body :global(ul),
+  .partner-body :global(ol) {
+    margin: 0 0 1.5rem 1.5rem;
+    line-height: 1.9;
+  }
+
+  .partner-body :global(li) {
+    margin-bottom: 0.4rem;
+  }
+
+  .partner-body :global(blockquote) {
+    background: var(--color-bg-light);
+    padding: 1.5rem 1.8rem;
+    border-radius: 10px;
+    border-left: 3px solid var(--color-accent);
+    margin: 1.8rem 0;
+    color: var(--color-text);
+    font-style: normal;
+  }
+
+  .partner-body :global(blockquote p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .partner-body :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: 2.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .partner-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .partner-hero-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .partner-hero-photo img,
+    .partner-hero-placeholder {
+      width: 140px;
+      height: 140px;
+    }
+
+    .partner-hero-placeholder {
+      font-size: 2.4rem;
+    }
+
+    .partner-hero-text h1 {
+      font-size: 1.7rem;
+    }
+
+    .partner-body :global(h2) {
+      font-size: 1.2rem;
+    }
+  }
+</style>

@@ -98,18 +98,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="founder-content">
         <h2 class="section-label">Founder</h2>
         <h3 class="section-heading">Osamu Babasaki</h3>
-        <p class="founder-title">International Business & Brand Advisor</p>
+        <p class="founder-title">Founder & CEO ／ International Business & Brand Advisor</p>
         <p>
-          With a career spanning diplomacy, government service, and private enterprise,
-          Osamu brings a unique perspective to international business advisory.
+          A practical advisor bridging Europe and Asia across diplomacy, brand, and trade.
+          With hands-on experience across diplomacy, public institutions, private enterprise,
+          and the brand business, he provides international business support spanning the
+          European and Asian markets.
         </p>
         <ul class="founder-highlights">
-          <li>Served as diplomat (Consul) at the Consulate General of Japan in West Berlin, Germany</li>
-          <li>Managed import operations for European luxury brands including Herend (Hungary) and Moser (Czech Republic)</li>
-          <li>Supported Yumi Katsura Paris operations, including Paris, Singapore, and Bangkok collections</li>
-          <li>Invited by the Royal Thai Embassy to deliver brand strategy lectures to 60 young entrepreneurs in Bangkok</li>
-          <li>Ongoing advisory relationship with Thailand's DITP and the Royal Thai Embassy in Tokyo</li>
+          <li>Served at the JGSDF Intelligence School in language education and Japan-U.S. joint training</li>
+          <li>Seconded to MOFA, posted as Consul to the Consulate General of Japan in West Berlin for 4 years</li>
+          <li>Trade Director and General Manager at Japan exclusive distributors of European luxury brands (Herend, Moser)</li>
+          <li>Led overseas business at a trading company, developing new ventures with Toray, Teijin, and Dutch partners</li>
+          <li>Took a company public on the TSE Mothers market within 3 years as IPO Department Head (Executive Managing Director)</li>
+          <li>International lead at Yumi Katsura International — collections in Paris, Singapore, Bangkok; Paris boutique management</li>
+          <li>Founded Top Notch Inc. and launched its brand business (Devon &amp; Drew Japan)</li>
+          <li>Invited by Thailand's Ministry of Commerce to deliver a brand strategy lecture in Bangkok</li>
         </ul>
+        <a href="/partners/babasaki" class="founder-detail-link">View full profile →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners" class="section section-alt">
+    <div class="container">
+      <h2 class="section-label center">Partners</h2>
+      <h3 class="section-heading center">The experts behind Top Notch</h3>
+      <p class="partners-intro">
+        Our partners bring expertise from different industries and regions, forming
+        tailored teams to deliver the right advisory for each engagement.
+      </p>
+      <div class="partners-grid">
+        <a href="/partners/koga" class="partner-card">
+          <div class="partner-avatar"><span>K</span></div>
+          <h4>Koga</h4>
+          <p class="partner-card-role">Partner</p>
+          <p class="partner-card-bio">Profile coming soon</p>
+          <span class="partner-card-link">View profile →</span>
+        </a>
+        <a href="/partners/koyasu" class="partner-card">
+          <div class="partner-avatar"><span>K</span></div>
+          <h4>Koyasu</h4>
+          <p class="partner-card-role">Partner</p>
+          <p class="partner-card-bio">Profile coming soon</p>
+          <span class="partner-card-link">View profile →</span>
+        </a>
+        <a href="/partners/suzuki" class="partner-card">
+          <div class="partner-avatar"><span>S</span></div>
+          <h4>Suzuki</h4>
+          <p class="partner-card-role">Partner</p>
+          <p class="partner-card-bio">Profile coming soon</p>
+          <span class="partner-card-link">View profile →</span>
+        </a>
+        <a href="/partners/barry" class="partner-card">
+          <div class="partner-avatar"><span>B</span></div>
+          <h4>Barry</h4>
+          <p class="partner-card-role">Partner</p>
+          <p class="partner-card-bio">Profile coming soon</p>
+          <span class="partner-card-link">View profile →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -123,7 +171,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Whether you're exploring new markets or looking to strengthen your international
         brand presence, we'd love to hear from you.
       </p>
-      <a href="mailto:hello@topnotchhq.com" class="btn-primary btn-light">hello@topnotchhq.com</a>
+      <a href="mailto:o.babasaki@topnotchhq.com" class="btn-primary btn-light">o.babasaki@topnotchhq.com</a>
     </div>
   </section>
 </BaseLayout>
@@ -386,6 +434,92 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 50%;
   }
 
+  .founder-detail-link {
+    display: inline-block;
+    margin-top: 1.8rem;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  /* Partners */
+  .partners-intro {
+    text-align: center;
+    color: var(--color-text-light);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .partner-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .partner-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .partner-card h4 {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .partner-card-role {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .partner-card-bio {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    min-height: 2.8em;
+  }
+
+  .partner-card-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
   /* Contact */
   .contact-inner {
     text-align: center;
@@ -447,6 +581,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     .founder-photo img {
       max-width: 250px;
+    }
+
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .partner-card {
+      padding: 1.5rem 1rem;
+    }
+
+    .partner-avatar {
+      width: 72px;
+      height: 72px;
+      font-size: 1.5rem;
     }
 
     .section-heading {

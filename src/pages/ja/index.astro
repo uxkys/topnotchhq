@@ -97,19 +97,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="founder-content">
         <h2 class="section-label">代表紹介</h2>
         <h3 class="section-heading">馬場崎 修</h3>
-        <p class="founder-title">国際ビジネス＆ブランドアドバイザー</p>
+        <p class="founder-title">Founder &amp; CEO ／ 国際ビジネス & ブランドアドバイザー</p>
         <p>
+          外交・ブランド・貿易実務を横断し、欧州とアジアをつなぐ実務型アドバイザー。
           外交、公的機関、民間企業、ブランドビジネスの各分野において実務経験を有し、
-          欧州およびアジア市場を中心に国際ビジネス支援を行っています。
+          欧州およびアジア市場を横断した国際ビジネス支援を行っています。
         </p>
         <ul class="founder-highlights">
-          <li>陸上自衛隊情報学校にて語学教育および日米間リエイゾン業務に従事</li>
-          <li>外務省出向、外交官（領事）として在西ベルリン総領事館に4年間駐在</li>
-          <li>欧州高級ブランド（ヘレンド、モーゼル等）の日本総代理店事業を統括</li>
-          <li>ユミカツラ株式会社にてパリ・シンガポール・バンコクのコレクションに参加</li>
-          <li>駐日タイ王国大使館の依頼によりバンコクにてブランド戦略講演を実施</li>
-          <li>タイ政府商務省（DITP）および駐日タイ王国大使館とアドバイザーとして連携中</li>
+          <li>陸上自衛隊情報学校にて語学教育および日米共同訓練に従事</li>
+          <li>外務省出向、在西ベルリン総領事館にて領事として4年間勤務</li>
+          <li>欧州高級ブランド（ヘレンド、モーゼル）の日本総代理店にて貿易部長兼事業統括として経営に従事</li>
+          <li>商社海外事業部長として東レ・帝人およびオランダ企業との新規事業開発に関与</li>
+          <li>IPO室長として企業を3年で東証マザーズ上場を達成（常務取締役）</li>
+          <li>ユミカツラインターナショナル株式会社にてパリ・シンガポール・バンコクのコレクションに参画、パリ店運営を担当</li>
+          <li>株式会社トップノッチを設立し、ブランド事業（Devon &amp; Drew Japan）を展開</li>
+          <li>タイ王国商務省の招聘により、バンコクでブランド戦略講義を実施</li>
         </ul>
+        <a href="/ja/partners/babasaki" class="founder-detail-link">詳細はこちら →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners" class="section section-alt">
+    <div class="container">
+      <h2 class="section-label center">パートナー紹介</h2>
+      <h3 class="section-heading center">トップノッチを支える専門家たち</h3>
+      <p class="partners-intro">
+        異なる業界・地域で培われた専門性を持つパートナーが、
+        プロジェクトに応じてチームを組成し、最適なアドバイザリーを提供します。
+      </p>
+      <div class="partners-grid">
+        <a href="/ja/partners/koga" class="partner-card">
+          <div class="partner-avatar"><span>K</span></div>
+          <h4>古賀</h4>
+          <p class="partner-card-role">パートナー</p>
+          <p class="partner-card-bio">プロフィール準備中</p>
+          <span class="partner-card-link">詳細はこちら →</span>
+        </a>
+        <a href="/ja/partners/koyasu" class="partner-card">
+          <div class="partner-avatar"><span>K</span></div>
+          <h4>小安</h4>
+          <p class="partner-card-role">パートナー</p>
+          <p class="partner-card-bio">プロフィール準備中</p>
+          <span class="partner-card-link">詳細はこちら →</span>
+        </a>
+        <a href="/ja/partners/suzuki" class="partner-card">
+          <div class="partner-avatar"><span>S</span></div>
+          <h4>鈴木</h4>
+          <p class="partner-card-role">パートナー</p>
+          <p class="partner-card-bio">プロフィール準備中</p>
+          <span class="partner-card-link">詳細はこちら →</span>
+        </a>
+        <a href="/ja/partners/barry" class="partner-card">
+          <div class="partner-avatar"><span>B</span></div>
+          <h4>Barry</h4>
+          <p class="partner-card-role">パートナー</p>
+          <p class="partner-card-bio">プロフィール準備中</p>
+          <span class="partner-card-link">詳細はこちら →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -122,7 +168,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p class="contact-desc">
         新市場への進出や国際ブランド戦略について、お気軽にお問い合わせください。
       </p>
-      <a href="mailto:hello@topnotchhq.com" class="btn-primary btn-light">hello@topnotchhq.com</a>
+      <a href="mailto:o.babasaki@topnotchhq.com" class="btn-primary btn-light">o.babasaki@topnotchhq.com</a>
     </div>
   </section>
 </BaseLayout>
@@ -385,6 +431,92 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     border-radius: 50%;
   }
 
+  .founder-detail-link {
+    display: inline-block;
+    margin-top: 1.8rem;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  /* Partners */
+  .partners-intro {
+    text-align: center;
+    color: var(--color-text-light);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .partner-card {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .partner-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .partner-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .partner-card h4 {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .partner-card-role {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .partner-card-bio {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    min-height: 2.8em;
+  }
+
+  .partner-card-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
   /* Contact */
   .contact-inner {
     text-align: center;
@@ -446,6 +578,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     .founder-photo img {
       max-width: 250px;
+    }
+
+    .partners-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .partner-card {
+      padding: 1.5rem 1rem;
+    }
+
+    .partner-avatar {
+      width: 72px;
+      height: 72px;
+      font-size: 1.5rem;
     }
 
     .section-heading {
