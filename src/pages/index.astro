@@ -155,6 +155,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="partner-card-bio">Founder of "Selfeliz" — a family-oriented gift brand designing family relationships and time.</p>
           <span class="partner-card-link">View profile →</span>
         </a>
+        <a href="/partners/jackie" class="partner-card">
+          <div class="partner-avatar partner-avatar-photo">
+            <img src="/images/topnotch_jackie_photo001.jpg" alt="Jackie Yu" />
+          </div>
+          <h4>Jackie Yu</h4>
+          <p class="partner-card-role">Creative Producer</p>
+          <p class="partner-card-bio">Hong Kong & Tokyo-based producer creating brand value through music and advertising.</p>
+          <span class="partner-card-link">View profile →</span>
+        </a>
         <a href="/partners/barry" class="partner-card">
           <div class="partner-avatar"><span>B</span></div>
           <h4>Barry</h4>
@@ -458,7 +467,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .partners-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 1.5rem;
   }
 
