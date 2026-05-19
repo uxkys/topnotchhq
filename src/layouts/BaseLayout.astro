@@ -27,9 +27,8 @@ const switchLabel = isJa ? 'EN' : 'JA';
   <body>
     <header class="header">
       <nav class="container nav">
-        <a href={`${prefix}/`} class="logo">
-          <img src="/images/TopNotchInc_icon.avif" alt="Top Notch Inc." class="logo-icon" />
-          <span>Top Notch Inc.</span>
+        <a href={`${prefix}/`} class="logo" aria-label="Top Notch Inc.">
+          <img src="/images/topnotch_logo.jpg" alt="Top Notch Inc." class="logo-img" />
         </a>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav-toggle-bar"></span>
@@ -107,19 +106,15 @@ const switchLabel = isJa ? 'EN' : 'JA';
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-primary);
     text-decoration: none;
-    letter-spacing: -0.02em;
   }
 
-  .logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
+  .logo-img {
+    height: 44px;
+    width: auto;
+    max-width: 220px;
     object-fit: contain;
+    display: block;
   }
 
   .nav-links {
@@ -288,9 +283,9 @@ const switchLabel = isJa ? 'EN' : 'JA';
       border-bottom: 0;
     }
 
-    .logo span {
-      display: inline;
-      font-size: 1rem;
+    .logo-img {
+      height: 36px;
+      max-width: 170px;
     }
   }
 </style>
