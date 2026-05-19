@@ -42,4 +42,4 @@ lang: ja
 **ブランドとは、単なる商品名ではなく、**
 **市場の中に“独自の意味”を持って存在することなのだと考えています。**![](/images/pasted-image-1779001026469.svg)
 
-![](/images/pasted-image-1779001136176.svg)
+![](/images/pasted-image-1779187334044.svg)
