@@ -18,7 +18,7 @@ const switchLabel = isJa ? 'EN' : 'JA';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -28,7 +28,7 @@ const switchLabel = isJa ? 'EN' : 'JA';
     <header class="header">
       <nav class="container nav">
         <a href={`${prefix}/`} class="logo" aria-label="Top Notch Inc.">
-          <img src="/images/topnotch_logo.jpg" alt="Top Notch Inc." class="logo-img" />
+          <img src="/images/icon.png" alt="Top Notch Inc." class="logo-img" />
         </a>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
           <span class="nav-toggle-bar"></span>
@@ -110,9 +110,8 @@ const switchLabel = isJa ? 'EN' : 'JA';
   }
 
   .logo-img {
-    height: 44px;
+    height: 48px;
     width: auto;
-    max-width: 220px;
     object-fit: contain;
     display: block;
   }
@@ -284,8 +283,7 @@ const switchLabel = isJa ? 'EN' : 'JA';
     }
 
     .logo-img {
-      height: 36px;
-      max-width: 170px;
+      height: 42px;
     }
   }
 </style>
