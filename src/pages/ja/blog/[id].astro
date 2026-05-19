@@ -65,8 +65,9 @@ const { Content } = await render(post);
 
   .post-meta {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.5rem 0.8rem;
   }
 
   .post-meta time {
@@ -81,6 +82,7 @@ const { Content } = await render(post);
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .section {
