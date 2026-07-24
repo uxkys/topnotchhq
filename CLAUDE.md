@@ -45,7 +45,7 @@ The site has a built-in admin panel at `/workspace/` powered by Sveltia CMS.
 This allows non-technical users (e.g., the company representative) to write blog articles via a WYSIWYG interface.
 
 - Admin URL: https://topnotchhq.com/workspace/
-- Auth: GitHub OAuth (uses default sveltia.app proxy)
+- Auth: GitHub OAuth via the self-hosted Cloudflare Worker auth proxy
 - Config: `public/workspace/config.yml`
 - Backend: writes directly to `src/content/blog/` in the GitHub repo
 - File naming convention enforced by config:
@@ -53,3 +53,11 @@ This allows non-technical users (e.g., the company representative) to write blog
   - Japanese: `{slug}-ja.md`
 
 When adding new content collections (e.g., service pages editable via CMS), update `public/workspace/config.yml` accordingly.
+
+### Business Notes
+
+`docs/business/` is for Top Notch-related project organization and business idea notes.
+These files are not part of the public website and should not be linked from the site.
+
+Only store information that is acceptable to be public in the GitHub repository.
+Do not store private sales lists, pricing strategy, client candidates, contracts, quotes, or negotiation details here.

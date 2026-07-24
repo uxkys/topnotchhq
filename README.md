@@ -57,6 +57,8 @@ public/
 │   ├── TopNotchInc_icon.avif        # 会社ロゴ
 │   └── topnotch_babasaki_photo001.avif  # 代表者写真
 └── favicon.svg
+docs/
+└── business/             # Webサイトには掲載しない事業整理メモ
 ```
 
 ### Pages & Sections
@@ -67,7 +69,7 @@ public/
 2. **About** — 会社概要 + ロゴ
 3. **Services** — 4つのサービス（市場調査、ブランド戦略、パートナー開拓、事業展開）
 4. **Founder** — 馬場崎 修のプロフィール + 写真 + 経歴
-5. **Contact** — メール連絡先（hello@topnotchhq.com）
+5. **Contact** — メール連絡先（o.babasaki@topnotchhq.com）
 
 ### Blog System
 
@@ -89,7 +91,14 @@ public/
 - 非エンジニアでもブログ記事をWYSIWYGで作成・編集できる
 - GitHub OAuth でログイン（リポジトリへの書き込み権限が必要）
 - 設定: `public/workspace/config.yml`
-- 認証プロキシ: Sveltia公式ホスト版（auth.sveltia.app）を利用
+- 認証プロキシ: Cloudflare Workers 上の `sveltia-cms-auth.wrkkys.workers.dev` を利用
+
+### Business Notes
+
+- `docs/business/` はTop Notch関連プロジェクトや新規事業アイデアの整理場所
+- Webサイトには表示されない
+- このリポジトリは公開前提のため、営業リスト・価格戦略・顧客候補・契約情報などの機密情報は置かない
+- 機密性がある内容は別のprivateリポジトリまたは非公開ドキュメントで管理する
 
 ## Claude への運用指示
 
