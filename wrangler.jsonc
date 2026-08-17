@@ -1,0 +1,13 @@
+{
+	// Static-assets-only Worker. The site is a fully static Astro build
+	// (output: "static"), so no SSR adapter or Worker script is needed —
+	// Cloudflare serves ./dist directly.
+	"name": "topnotchhq",
+	"compatibility_date": "2026-05-20",
+	"assets": {
+		"directory": "./dist"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
