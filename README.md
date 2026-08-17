@@ -7,7 +7,7 @@
 
 - **本番URL**: https://topnotchhq.com
 - **ドメイン管理**: Cloudflare
-- **ホスティング**: Cloudflare Workers & Pages（GitHub連携で自動デプロイ）
+- **ホスティング**: Cloudflare Workers（Workers Builds によるGitHub連携自動デプロイ）
 - **フレームワーク**: Astro（静的サイト生成）
 - **リポジトリ**: https://github.com/uxkys/topnotchhq
 
@@ -15,12 +15,28 @@
 
 ### Hosting & Deployment
 
-- Cloudflare Workers & Pages を使用
+- **Cloudflare Workers Builds** を使用（2026年5月に Pages から移行済み）
 - GitHub `main` ブランチへの push で自動ビルド・デプロイ
-- ビルドコマンド: `npm run build`
-- 出力ディレクトリ: `dist/`
+- ビルドコマンド: `npm run build` → 静的ファイルを `dist/` に出力
+- デプロイコマンド: `npx wrangler deploy` → リポジトリルートの `wrangler.jsonc` を読む
 - カスタムドメイン `topnotchhq.com` を Cloudflare DNS で設定済み
 - プレビューURL: `topnotchhq.wrkkys.workers.dev`
+
+#### wrangler.jsonc について
+
+`wrangler.jsonc` は**静的アセット専用 Worker**として設定されている（`assets.directory: "./dist"`、`main` エントリポイントなし）。
+
+このサイトは `output: "static"` の完全な静的サイトなので、SSRアダプタ（`@astrojs/cloudflare`）は**不要かつ追加してはいけない**。
+
+`wrangler.jsonc` が無いと、wrangler がビルド環境（読み取り専用）にアダプタを自動インストールしようとして**デプロイ段階だけが失敗する**。このときビルドログ上は Astro のビルドが成功して見えるため気づきにくい。実際にこの状態で本番が3か月間更新されないまま止まっていたことがある。
+
+変更が本番に出ないときは、ビルドログの成功表示ではなく **Cloudflare ダッシュボードの Builds タブのステータス**を確認する。
+
+push 前にローカルで確認する場合:
+
+```
+npx wrangler deploy --dry-run
+```
 
 ### Internationalization (i18n)
 
@@ -58,8 +74,12 @@ public/
 │   └── topnotch_babasaki_photo001.avif  # 代表者写真
 └── favicon.svg
 docs/
-└── business/             # Webサイトには掲載しない事業整理メモ
+├── business/            # Webサイトには掲載しない事業整理メモ
+└── source-materials/    # ブログ記事の元原稿（docx等）の保管場所
+wrangler.jsonc            # Cloudflare Workers デプロイ設定（静的アセット専用）
 ```
+
+※ `docs/` は Astro の配信対象外（配信されるのは `public/` のみ）。元原稿を `public/` に置くと本番サイトからダウンロード可能になってしまうので置かないこと。
 
 ### Pages & Sections
 
@@ -99,6 +119,12 @@ docs/
 - Webサイトには表示されない
 - このリポジトリは公開前提のため、営業リスト・価格戦略・顧客候補・契約情報などの機密情報は置かない
 - 機密性がある内容は別のprivateリポジトリまたは非公開ドキュメントで管理する
+
+### Source Materials
+
+- `docs/source-materials/` はブログ記事の元になった原稿（docx等）の保管場所
+- 記録として残すためのもので、Webサイトからはアクセスできない
+- Business Notes と同じく、公開リポジトリに置けない機密情報は保存しない
 
 ## Claude への運用指示
 

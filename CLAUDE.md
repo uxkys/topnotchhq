@@ -2,7 +2,7 @@
 
 ## Project
 
-Top Notch Inc. 公式サイト（Astro + Cloudflare Workers & Pages）
+Top Notch Inc. 公式サイト（Astro 静的サイト + Cloudflare Workers）
 Local path: /Users/koyasu/document/src/github.com/topnotchhq
 
 ## Critical Rules
@@ -23,6 +23,23 @@ After making changes:
 2. `git add` the changed files
 3. `git commit` with descriptive message
 4. `git push` to trigger auto-deploy on Cloudflare
+
+Deployment runs on **Cloudflare Workers Builds** (not Pages — the project was
+migrated in May 2026). On every push to `main`, Cloudflare runs:
+
+- Build command: `npm run build` → static output in `dist/`
+- Deploy command: `npx wrangler deploy` → reads `wrangler.jsonc`
+
+`wrangler.jsonc` must stay in the repository root. It declares a
+**static-assets-only Worker** (`assets.directory: "./dist"`, no `main`
+entrypoint). The site is `output: "static"`, so it needs no SSR adapter —
+**do not add `@astrojs/cloudflare`**. If `wrangler.jsonc` is missing, wrangler
+tries to auto-install the adapter inside the read-only build environment and
+the deploy step fails while the build step still reports success. That failure
+mode silently froze production for three months; check the Builds tab, not just
+the build log, when a change does not appear live.
+
+To verify a deploy locally before pushing: `npx wrangler deploy --dry-run`.
 
 ### i18n — Bilingual Consistency Rule
 
@@ -61,3 +78,12 @@ These files are not part of the public website and should not be linked from the
 
 Only store information that is acceptable to be public in the GitHub repository.
 Do not store private sales lists, pricing strategy, client candidates, contracts, quotes, or negotiation details here.
+
+### Source Materials
+
+`docs/source-materials/` holds the original documents (`.docx` etc.) that blog
+articles were written from, kept for the record.
+
+Files under `docs/` are NOT served by Astro — only `public/` is. Never put a
+source document in `public/`, or it becomes downloadable from the live site.
+The same public-repository rule as Business Notes applies: nothing confidential.
