@@ -12,7 +12,7 @@ lang: en
 
 TopNotch partner Munenori Koyasu has co-authored and published *Mastering Raycast in the Shortest Time*.
 
-Raycast is a tool designed to make everyday PC work more efficient, from routine tasks and information search to app operations. The book introduces Raycast in an accessible way, covering everything from the basics to practical ways of using it in daily work.
+Raycast is a shortcut tool designed to make everyday PC work more efficient, from routine tasks and information search to app operations. The book introduces Raycast in an accessible way, covering everything from the basics to practical ways of using it in daily work.
 
 As the digital environment surrounding work changes rapidly, including the growing use of AI, the question of how to apply new tools to real work is becoming increasingly important.
 
